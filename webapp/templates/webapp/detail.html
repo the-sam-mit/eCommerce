@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+<h1>{{ item.item_name }}</h1>
+<h4>Price: {{ item.item_price }}</h4>
+<h4>Id: {{ item.id }}</h4>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+{% endblock %}
+
+{% block nvbar %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+  <a href="{% url 'webapp:signup' %}">Signup</a>
+{% endif %}
+{% endblock %}
+
+

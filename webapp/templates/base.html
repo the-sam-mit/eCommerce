@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+	<meta charset="utf-8">
+	
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	{% block heads %}
+	{% endblock %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar sticky-top navbar-light navbar-expand-md bg-light justify-content-md-center justify-content-start">
+		
+		<a class="navbar-brand d-md-none d-inline" href="base.html">SamMart</a>
+		
+		<button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+		   <span class="navbar-toggler-icon"></span>
+		</button>
+		
+		<a class="nav-link" style="font-size: 25px" href="http://www.google.com"><i class="fa fa-search mr-1"></i></a>
+		<div class="navbar-collapse collapse  justify-content-between align-items-center w-100" id="collapsingNavbar2">
+    		<ul class="navbar-nav mx-auto text-md-center text-left">
+      			<li class="nav-item">
+        			<a class="nav-link smallCaps" href="#">Home</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link smallCaps" href="#">About</a>
+      			</li>
+      			<li class="nav-item my-auto">
+	                <a class="nav-link navbar-brand mx-0 d-none d-md-inline" style="font-size: 25px;color: blue;" href="/webapp">SamMart</a>
+	            </li>
+			    <li class="nav-item">
+			        <a class="nav-link smallCaps" href="#">Products</a>
+			    </li>
+			    <li class="nav-item">
+			        <a class="nav-link smallCaps" href="/webapp/add_to_cart">Cart</a>
+			    </li>
+    		</ul>
+    		<ul class="navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
+    			
+			  <main>
+			    {% block nvbar %}
+			    {% endblock %}
+			  </main>
+    			<li class="nav-item">
+    				<a class="nav-link" style="color: #38A1F3;font-size: 25px" href="https://twitter.com/SamarthMittal19"><i class="fa fa-twitter"></i></a>
+    			</li>
+    			<li class="nav-item">
+    				<a class="nav-link" style="color: #3b5998;font-size: 25px" href="https://www.facebook.com/samarth.mittal.10485"><i class="fa fa-facebook mr-1"></i></a>
+    			</li>
+    			<li class="nav-item">
+    				<a class="nav-link" style="color: black;font-size: 25px" href="http://www.github.com/the-sam-mit"><i class="fa fa-github "></i></a>
+    			</li>
+    			<li class="nav-item">
+    				<a class="nav-link" style="color: #0077B5;font-size: 25px" href="https://www.linkedin.com/in/samarth-mittal-37ab74157/"><i class="fa fa-linkedin"></i></a>
+    			</li>
+    		</ul> 
+  		</div>
+	</nav>
+	
+
+	{% block content %}
+    {% endblock %}
+
+	<!-- Almost-copy-pasted-part -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+
+  <footer>
+        <div class="container">
+            <center>
+             	<p>Copyright © SamMart. All Rights Reserved | Contact Us: +91 90000 00000”. </p>
+            </center>	
+        </div>    
+	</footer>
+</body>
+</html>

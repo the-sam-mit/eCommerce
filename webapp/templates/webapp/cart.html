@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block heads %}
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'webapp/cart_style.css' %}">
+{% endblock %}
+
+{% block content %}
+	<header id="site-header">
+		<div class="container">
+			<h1>Shopping cart </h1>
+		</div>
+	</header>
+
+	<div class="container">
+		<section id="cart"> 
+			{% for item in items_list %} 
+				<article class="product">
+					<header>
+						<a href="{{ item.id}}/delete_pro" class="remove">
+							<img src="{{item.cart_product.item_image.url}}" alt="no image uploaded">
+							<h3>Remove product</h3>
+						</a>
+					</header>
+
+					<div class="content">
+						<h1>{{ item.cart_product.item_name }}</h1>
+						description to be added
+						<!-- <a class="btn btn-primary" href="{{ item.id}}/detail" role="button">Remove</a> -->
+
+					</div>
+					<footer class="content">
+						<span class="qt">Qty : {{ item.cart_quantity }}</span>
+						
+						<h2 class="full-price">
+							Rs. {{ item.cart_subtotal }}
+						</h2>
+
+						<h2 class="price">
+							Rs. {{item.cart_product.item_price}}
+						</h2>
+					</footer>
+				</article>
+			{% endfor %}
+			
+		</section>
+
+	</div>
+
+	<footer id="site-footer">
+		<div class="container clearfix">
+
+			<!-- <div class="left">
+				<h2 class="subtotal">Subtotal: <span>163.96</span></h2>
+				<h3 class="shipping">Shipping: <span>5.00</span></h3>
+			</div> -->
+
+			<div class="right">
+				<h1 class="total">Total: <span>Rs. {{carT.cart_total}}</span></h1>
+				<a href="{% url 'webapp:order_it' %}" class="btn">Checkout</a>
+			</div>
+
+		</div>
+	</footer>
+{% endblock %}
+
+
+{% block nvbar %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+  <a href="{% url 'webapp:signup' %}">Signup</a>
+{% endif %}
+{% endblock %}
+
+
