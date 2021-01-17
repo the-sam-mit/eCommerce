@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 class Item(models.Model):
 	item_name = models.CharField(max_length=200)
 	item_price = models.FloatField(default = 0.0)	
+	item_desc = models.CharField(max_length=500, default='Best deal offered')	
+	item_category = models.CharField(max_length=100, default='others')	
 	item_image = models.ImageField(upload_to = 'upload/', null=True, blank=True)
 	def __str__(self):
 		return self.item_name

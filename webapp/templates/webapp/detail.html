@@ -1,16 +1,72 @@
 {% extends 'base.html' %}
 
 {% block title %}Index{% endblock %}
+{% block heads %}
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'webapp/css_detail.css' %}">	
+{% endblock %}
 
 {% block content %}
 
-<h1>{{ item.item_name }}</h1>
+<!-- <h1>{{ item.item_name }}</h1>
 <h4>Price: {{ item.item_price }}</h4>
 <h4>Id: {{ item.id }}</h4>
-
+ -->
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
+<main class="container">
+ 
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column">
+    <img data-image="red" class="active" style="height: 100%; max-height: 500px; width: 100%; max-width:500px;  margin-top: 0px;" src="{{item.item_image.url}}" alt="">
+  </div>
+ 
+ 
+  <!-- Right Column -->
+  <div class="right-column">
+ 
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>{{ item.item_category }}</span>
+      <h1>{{ item.item_name }}</h1>
+      <p>{{ item.item_desc }}</p>
+    </div>
+ 
+    <!-- Product Configuration -->
+    <div class="product-configuration">
+ 
+      <!-- Product Color -->
+      
+      <!-- Cable Configuration -->
+      <div class="cable-config">
+        <span>Features</span>
+ 
+        <div class="cable-choose">
+          <button>Straight</button>
+          <button>Coiled</button>
+          <button>Long-coiled</button>
+        </div>
+ 
+        <a style="color: blue">Best deal at lowest price.</a>
+      </div>
+    </div>
+ 
+    <!-- Product Pricing -->
+    <form method="post" action="/webapp/{{ item.id}}/add_to_cart/">
+    {% csrf_token %}
+    {{form.as_p}}
+     <div>
+     	<p>Quantity:</p>
+     <input type="text" class="form-control " name="qty" value="1"  style="width:20%" />	
+     </div>
+    <div class="product-price">
+      <span>Rs. {{ item.item_price }}</span>
+     <button href="/webapp/{{ item.id}}/add_to_cart/" type="submit" class="cart-btn">Add to cart</button> 
+    </div>
+     </form>
 
+  </div>
+</main>
 {% endblock %}
 
 {% block nvbar %}

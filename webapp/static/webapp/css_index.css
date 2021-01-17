@@ -20,6 +20,43 @@ input{
     font-size: 26px;
 	border:1px solid #ddd;
 	border-radius:4px;
+	/*color: red;*/
 	/*display: inline-block;*/
 	/*vertical-align: middle;*/
 }		
+
+.cart-btn {
+  display: inline-block;
+  background-color: #7DC855;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all .5s;
+}
+.cart-btn:hover {
+  background-color: #64af3d;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*main card*/
+
+.card {
+  display: flex;
+  align-items: center;
+  /*background: #252831 url(https://www.dropbox.com/s/fuadz3vmw2nsylm/bg.png?raw=1)	*/
+    /*no-repeat;*/
+  height: 300px;
+  width: 1000px;
+  margin: 0 auto;
+  box-shadow: 10px 15px 50px 10px rgba(0, 0, 0, 0.4);
+  margin-top: 2%;
+}
