@@ -11,7 +11,9 @@ The features for the admin ranges from adding a product to the application to th
 The personal details of the user (including payment transaction details), however are not visible to the admin, in order to secure transactions and maintain privacy of the user. 
 
 ## The Application
-Find below the screenshots of the running application
+Find below the screenshots of the running application.
+
+
 
 
 ## How to Use
