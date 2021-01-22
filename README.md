@@ -13,6 +13,11 @@ The personal details of the user (including payment transaction details), howeve
 ## The Application
 Find below the screenshots of the running application.
 
+![](Screenshots/Index.png)
+![](Screenshots/IndexPage.png)
+![](Screenshots/Cart.png)
+![](Screenshots/Billing.png)
+![](Screenshots/Invoice.png)
 
 
 
