@@ -24,3 +24,8 @@ class Cart_Product(models.Model):
 	cart_quantity = models.IntegerField(default = 0)
 	def __str__(self):
 		return self.cart_product.item_name
+
+class Orders(models.Model):
+	# order_id = models.BigAutoField(primary_key=True)
+	def __str__(self):
+		return self.id
