@@ -75,13 +75,15 @@ def add_to_cart(request, product_id):
 
 def added_cart(request):
 	cart_exists=Cart.objects.filter(pk=request.user.id).exists()
-	print(cart_exists)
+	print(cart_exists,'Added cart')
 	user_existing = get_object_or_404(User, pk=request.user.id)
 	if cart_exists == False:
 		cart_add = Cart(cart_user = user_existing, cart_total='0.0')
 		cart_add.save()
 	cart_add = Cart.objects.get(cart_user = user_existing)
 	items_list = Cart_Product.objects.filter(cart_present = cart_add)
+	print('Items :', items_list)
+	print('Cart_add :', cart_add)
 	context = {'items_list': items_list, 'carT': cart_add}
 	return render(request, 'webapp/cart.html', context)
 
@@ -121,8 +123,23 @@ def deleted_p(request, delete_id):
 	context = {'items_list': items_list, 'carT': cart_add}
 	return redirect(request.META['HTTP_REFERER'])
 
+def Apriori(items_list):
+	# Implement Apriori here
+	print('Apriori', items_list)
+
 def order_it(request):
 	# here cart_id must also be returned
+	cart_exists=Cart.objects.filter(pk=request.user.id).exists()
+	print(cart_exists,'Added cart')
+	user_existing = get_object_or_404(User, pk=request.user.id)
+	if cart_exists == False:
+		cart_add = Cart(cart_user = user_existing, cart_total='0.0')
+		cart_add.save()
+	cart_add = Cart.objects.get(cart_user = user_existing)
+	items_list = Cart_Product.objects.filter(cart_present = cart_add)
+	print('Items :', items_list)
+	print('Cart_add :', cart_add)
+	Apriori(items_list)
 	return render(request, 'webapp/order.html')
 
 def add_order(request):
